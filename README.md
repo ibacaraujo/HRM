@@ -150,6 +150,20 @@ OMP_NUM_THREADS=8 torchrun --nproc-per-node 8 pretrain.py data_path=data/maze-30
 
 *Runtime:* ~1 hour
 
+### CIFAR-10 Classification
+
+Prepare the dataset:
+
+```bash
+python dataset/build_cifar_dataset.py
+```
+
+Train with the classification architecture:
+
+```bash
+OMP_NUM_THREADS=8 python pretrain.py arch=hrm_v1_classifier data_path=data/cifar10 epochs=10 global_batch_size=512
+```
+
 ### Full Sudoku-Hard
 
 ```bash
